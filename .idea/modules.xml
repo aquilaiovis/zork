@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/zork.iml" filepath="$PROJECT_DIR$/.idea/zork.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Zork-Scrum.iml" filepath="$PROJECT_DIR$/Zork-Scrum.iml" />
     </modules>
   </component>
 </project>
