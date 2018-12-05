@@ -15,7 +15,7 @@ public class RoomTest
         room.longDescription();
         room.nextRoom("north");
 
-        Item item = new Item();
+        Item item = new Item("Penispumpe", "Generic item", 2000);
         item.setName("Test item");
         room.addItem(item);
         assertEquals("The item should be the same.", item, room.getItem("Test item"));
