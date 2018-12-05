@@ -1,8 +1,8 @@
 package ch.bbw.zork;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 public class RoomTest
 {
@@ -18,6 +18,6 @@ public class RoomTest
         Item item = new Item();
         item.setName("Test item");
         room.addItem(item);
-        assertEquals(item, room.getItem("Test item"), "The item should be the same.");
+        assertEquals("The item should be the same.", item, room.getItem("Test item"));
     }
 }

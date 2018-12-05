@@ -1,8 +1,8 @@
 package ch.bbw.zork;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 public class CommandWordsTest
 {
@@ -10,7 +10,7 @@ public class CommandWordsTest
     public void testCommandWords()
     {
         CommandWords commands = new CommandWords();
-        assertEquals(true, commands.isCommand("go"), "Check whether a given String is a valid command word. Return true if it is, false if it isn't.");
+        assertEquals("Check whether a given String is a valid command word. Return true if it is, false if it isn't.", true, commands.isCommand("go"));
         commands.showAll();
     }
 }
