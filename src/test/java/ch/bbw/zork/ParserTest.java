@@ -12,8 +12,14 @@ public class ParserTest {
     private Parser parser;
 
     @Test
-    public void testParser() {
+    public void testParserSameInput() {
         parser = new Parser(new ByteArrayInputStream("go west".getBytes()));
         assertEquals("The commands should be the same.", new Command(new CommandWords(), "go", "west"), parser.getCommand());
+    }
+
+    @Test
+    public void testParserDifferentInput() {
+        parser = new Parser(new ByteArrayInputStream("go home".getBytes()));
+        assertEquals("The commands should not be the same.", new Command(new CommandWords(), "go", "west").equals(parser.getCommand()), false);
     }
 }
