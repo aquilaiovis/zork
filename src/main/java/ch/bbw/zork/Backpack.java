@@ -15,47 +15,58 @@ public class Backpack
         currentWeight = 0;
     }
 
-    public Item getItem(String secondCommand)
+    public Item getItem(String secondCommandWord)
     {
-        for(Item item: items)
+        for (Item item : items)
         {
-            if(item.getName().equals(secondCommand))
+            if (item.getName().equals(secondCommandWord))
             {
-                if(item.getWeightInGrams() <= maxWeightInGrams - currentWeight)
-                {
-                    currentWeight += item.getWeightInGrams();
-                    System.out.println(item.getName() + " was successfully picked up.");
-                    return item;
-                }
-                else
-                {
-                    System.out.println(item.getName() + " is " + (currentWeight + item.getWeightInGrams() - maxWeightInGrams)
-                            + " grams too heavy for your backpack.");
-                    return null;
-                }
+                return item;
             }
         }
-        System.out.println("This item is not in the current room.");
         return null;
     }
 
-    public void addItem(Item item)
+    public boolean contains(Item item)
     {
-        items.add(item);
+        if (items.contains(item))
+        {
+            System.out.println("This item was already picked up.");
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 
-    public void removeItem(String secondCommand)
+    public void add(Item item)
     {
-        for(Item item: items)
+        if (item.getWeightInGrams() <= maxWeightInGrams - currentWeight)
         {
-            if(item.getName().equals(secondCommand))
-            {
-                currentWeight -= item.getWeightInGrams();
-                items.remove(item);
-                System.out.println(item.getName() + " was successfully removed.");
-            }
+            currentWeight += item.getWeightInGrams();
+            System.out.println(item.getName() + " was successfully picked up.");
+            items.add(item);
         }
-        System.out.println("This item is not in your backpack.");
+        else
+        {
+            System.out.println(item.getName() + " is " + (currentWeight + item.getWeightInGrams() - maxWeightInGrams)
+                    + " grams too heavy for your backpack.");
+        }
+    }
+
+    public void removeItem(Item item)
+    {
+        if(item == null)
+        {
+            System.out.println("This item is not in your backpack.");
+        }
+        else
+        {
+            currentWeight -= item.getWeightInGrams();
+            items.remove(item);
+            System.out.println(item.getName() + " was successfully removed.");
+        }
     }
 
     public ArrayList<Item> getItems()
