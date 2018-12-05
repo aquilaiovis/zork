@@ -4,8 +4,15 @@ public class Item {
 	
 	private String name;
 	private String description;
-	private String weight;
-	
+	private int weightInGrams;
+
+	public Item(String name, String description, int weightInGrams)
+	{
+		this.name = name;
+		this.description = description;
+		this.weightInGrams = weightInGrams;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -22,11 +29,11 @@ public class Item {
 		this.description = description;
 	}
 
-	public String getWeight() {
-		return weight;
+	public int getWeightInGrams() {
+		return weightInGrams;
 	}
 
-	public void setWeight(String weight) {
-		this.weight = weight;
+	public void setWeightInGrams(int weight) {
+		this.weightInGrams = weight;
 	}
 }
