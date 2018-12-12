@@ -8,14 +8,14 @@ public class GoodGhost extends Ghost {
 
     @Override
     public void interact() {
-        System.out.println("Yo wanna hear a secret... The veil is in the " + getVeil() + ". Yo look out for the Bad " +
-                "ghosts. Those snitches wanna kill you!");
+        System.out.println("Yo wanna hear a secret... The cape is in the " + getCapeRoom() + ". Yo look out for the Bad " +
+                "ghosts. Those snitches wanna kill you if you're not wearing it!");
     }
 
-    private String getVeil() {
+    private String getCapeRoom() {
         for (Room room:super.getGame().getMap()) {
             for (Item item:room.getItems()) {
-                if (item.getName().equals("veil")) {
+                if (item.getName().equals("cape")) {
                     return room.getName();
                 }
             }
