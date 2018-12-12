@@ -15,7 +15,7 @@ public class GoodGhost extends Ghost {
     private String getCapeRoom() {
         for (Room room:super.getGame().getMap()) {
             for (Item item:room.getItems()) {
-                if (item.getName().equals("cape")) {
+                if (item.getName().equals("Cape")) {
                     return room.getName();
                 }
             }

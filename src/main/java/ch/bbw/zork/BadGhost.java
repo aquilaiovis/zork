@@ -8,6 +8,8 @@ public class BadGhost extends Ghost {
 
     @Override
     public void interact() {
-
+        if (super.getGame().getBackpack().getItem("cape") == null) {
+            super.getGame().over();
+        }
     }
 }
