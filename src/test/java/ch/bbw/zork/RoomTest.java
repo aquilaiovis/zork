@@ -9,7 +9,7 @@ public class RoomTest
     @Test
     public void testCommandWords()
     {
-        Room room = new Room("This is a test room.");
+        Room room = new Room("Test", "This is a test room.");
         room.setExits(room, null, room, null);
         room.shortDescription();
         room.longDescription();
