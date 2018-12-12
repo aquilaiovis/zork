@@ -69,6 +69,12 @@ public class Backpack
         }
     }
 
+    public void removeAllItems(){
+        for (int i = 0; i < items.size(); i++){
+            items.remove(i);
+        }
+    }
+
     public ArrayList<Item> getItems()
     {
         return items;
