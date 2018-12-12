@@ -8,17 +8,17 @@ public class Item {
 
 	public Item(String name, String description, int weightInGrams)
 	{
-		this.name = name;
+		this.name = name.toLowerCase();
 		this.description = description;
 		this.weightInGrams = weightInGrams;
 	}
 
 	public String getName() {
-		return name;
+		return name.toLowerCase();
 	}
 
 	public void setName(String name) {
-		this.name = name;
+		this.name = name.toLowerCase();
 	}
 
 	public String getDescription() {
